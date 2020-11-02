@@ -5,7 +5,7 @@ public class SubScreenBase
 {
     protected UISubCtrlBase mCtrlBase;  // 子界面也拥有各自的UISubCtrlBase
 
-    public UICtrlBase CtrlBase { get => mCtrlBase;}
+    public UISubCtrlBase CtrlBase { get => mCtrlBase;}
 
     public SubScreenBase(UISubCtrlBase ctrlBase)
     {

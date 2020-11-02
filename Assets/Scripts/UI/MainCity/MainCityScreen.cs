@@ -21,6 +21,6 @@ public class MainCityScreen : ScreenBase
 
     private void OnGuildClick()
     {
-        Debug.Log("点击工会按钮");
+        GameUIManager.GetInstance().OpenUI(typeof(GuildScreen));
     }
 }
