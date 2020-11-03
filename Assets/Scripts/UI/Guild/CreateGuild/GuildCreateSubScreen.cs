@@ -14,7 +14,6 @@ public class GuildCreateSubScreen : SubScreenBase
         
         mCtrl.btnCreate.onClick.AddListener(OnCreateClick);
         mCtrl.btnClose.onClick.AddListener(OnCloseClick);
-        Debug.Log("Init create sub screen");
     }
 
     private void OnCreateClick()
@@ -24,7 +23,6 @@ public class GuildCreateSubScreen : SubScreenBase
 
     private void OnCloseClick()
     {
-        Debug.Log("关闭界面xxx");
         GameUIManager.GetInstance().CloseUI(typeof(GuildScreen));
     }
 

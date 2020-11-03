@@ -18,7 +18,6 @@ public class GuildInfoSubScreen : SubScreenBase
 
     private void OnCloseClick()
     {
-        Debug.Log("关闭界面");
         GameUIManager.GetInstance().CloseUI(typeof(GuildScreen));
     }
 }
