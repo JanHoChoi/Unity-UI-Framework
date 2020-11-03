@@ -31,6 +31,7 @@ public class TagAndLayerManager
         {
             if (it.name != "m_SortingLayers")
             {
+                Debug.Log(it.arraySize);
                 continue;
             }
             // 先删除所有
@@ -48,7 +49,14 @@ public class TagAndLayerManager
 
                 while(dataPoint.NextVisible(true))
                 {
-
+                    if(dataPoint.name == "name")
+                    {
+                        dataPoint.stringValue = s;
+                    }
+                    else if(dataPoint.name == "uniqueID")
+                    {
+                        dataPoint.intValue = (int)Enum.Parse(typeof(EScreenPriority), s);
+                    }
                 }
             }
         }
