@@ -18,6 +18,9 @@ public class GuildScreen: ScreenBase
     {
         base.OnLoadSuccess();
         mCtrl = mCtrlBase as GuildCtrl;
+
+        // 监听公会创建成功事件
+        mCtrl.AutoRelease(EventManager.OnGuildCreated.Subscribe(OnGuildCreated));
         
         bool bHaveGuild = PlayerData.GetInstance().HaveGuild();      // 有公会就打开公会详情 没有就打开创建界面
 
@@ -26,6 +29,21 @@ public class GuildScreen: ScreenBase
         mCtrl.subCreate.gameObject.SetActive(!bHaveGuild);
 
         if(bHaveGuild)
+        {
+            mSubInfo = new GuildInfoSubScreen(mCtrl.subInfo);
+        }
+        else
+        {
+            mSubCreate = new GuildCreateSubScreen(mCtrl.subCreate);
+        }
+    }
+
+    void OnGuildCreated(bool bCreated)
+    {
+        mCtrl.subInfo.gameObject.SetActive(bCreated);
+        mCtrl.subCreate.gameObject.SetActive(!bCreated);
+
+        if(bCreated)
         {
             mSubInfo = new GuildInfoSubScreen(mCtrl.subInfo);
         }
