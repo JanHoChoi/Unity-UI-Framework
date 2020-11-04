@@ -15,10 +15,37 @@ public enum EScreenPriority
     //PriorityCount = 100
 };
 
+public enum EUICareAboutMoneyType
+{
+    Silver,// 银币
+    Gold,// 金币
+    Strength,// 体力
+    Gem// 钻石
+}
+
 public class UICtrlBase : UIFEventAutoRelease
 {
     [HideInInspector]
     public Canvas ctrlCanvas;
+
+    [Tooltip("ScreenBase层级")]
+    public EScreenPriority screenPriority = EScreenPriority.PriorityLobbyForSystem;
+
+    [Tooltip("是否使用遮罩,点击遮罩会关闭当前页面")]
+    public bool m_UseMask = false;
+
+    [Tooltip("勾选后,不会被mHideOtherScreenWhenThisOnTop控制")]
+    public bool mAlwaysShow = false;
+    [Tooltip("勾选后,当该界面打开,会隐藏它下面的其他非AlwaysShow界面")]
+    public bool mHideOtherScreenWhenThisOnTop = false;
+
+    [Tooltip("是否关心货币栏的状态")]
+    public bool mBCareAboutMoney = false;
+    [Tooltip("如果CareAboutCurrency为True,那么它关心哪些类型")]
+    public EUICareAboutMoneyType[] mLMoneyTypes;
+    /*
+        最上层界面判断自身是否关心货币栏. 如果关心,则通过事件告诉货币栏它关心哪些货币,货币栏本身决定怎么显示这些货币
+    */
 
     void Awake()
     {

@@ -13,11 +13,16 @@ public class GuildInfoSubScreen : SubScreenBase
         mCtrl = mCtrlBase as GuildInfoSubCtrl;
 
         mCtrl.btnClose.onClick.AddListener(OnCloseClick);
-        Debug.Log("Init info sub screen");
+        mCtrl.btnJumpTask.onClick.AddListener(OnJumpTask);
     }
 
     private void OnCloseClick()
     {
         GameUIManager.GetInstance().CloseUI(typeof(GuildScreen));
+    }
+
+    private void OnJumpTask()
+    {
+        GameUIManager.GetInstance().OpenUI(typeof(TaskScreen));
     }
 }

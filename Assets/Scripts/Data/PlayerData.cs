@@ -24,6 +24,6 @@ public class PlayerData
     public void SetHaveGuild(bool bHaveGuild)
     {
         mBHasGuild = bHaveGuild;
-        EventManager.OnGuildCreated.BroadCastEvent(mBHasGuild);
+        EventManager.OnGuildCreated.BroadcastEvent(mBHasGuild);
     }
 }

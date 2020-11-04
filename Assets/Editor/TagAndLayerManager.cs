@@ -29,12 +29,12 @@ public class TagAndLayerManager
         SerializedProperty it = tagManager.GetIterator();
         while(it.NextVisible(true))
         {
+            Debug.Log(it.displayName);
             if (it.name != "m_SortingLayers")
             {
-                Debug.Log(it.arraySize);
-                continue;
+                continue;   // continue到sortingLayer的入口
             }
-            // 先删除所有
+            // 先删除所有m_SortingLayers
             while(it.arraySize > 0)
             {
                 it.DeleteArrayElementAtIndex(0);
@@ -60,11 +60,42 @@ public class TagAndLayerManager
                 }
             }
         }
+        tagManager.ApplyModifiedProperties();
+        AssetDatabase.SaveAssets();
     }
 
     public static bool IsHaveSortingLayer(string sortingLayer)
     {
-        
+        SerializedObject tagManager = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/Tagmanager.asset")[0]);
+        if(tagManager == null)
+        {
+            Debug.LogError("未能序列化tagManager！！！！！！ IsHaveSortingLayer");
+            return true;
+        }
+        SerializedProperty it = tagManager.GetIterator();
+        while(it.NextVisible(true))
+        {
+            if(it.name != "m_SortingLayers")
+            {
+                continue;
+            }
+            for (int i = 0; i < it.arraySize; i++)
+            {
+                SerializedProperty dataPoint = it.GetArrayElementAtIndex(i);
+                while(dataPoint.NextVisible(true))
+                {
+                    if(dataPoint.name != "name")
+                    {
+                        continue;
+                    }
+                    if(dataPoint.stringValue == sortingLayer)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
     #endregion
 }
