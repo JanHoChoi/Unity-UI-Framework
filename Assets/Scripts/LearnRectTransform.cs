@@ -25,8 +25,9 @@ public class LearnRectTransform : MonoBehaviour
             // m_RectTransform.anchorMax = m_RectTransform.anchorMax + new Vector2(0, 0.01f);
             // m_RectTransform.localPosition = new Vector3(0, 100, 0);
             // m_RectTransform.anchoredPosition = new Vector2(0, 100);
-            m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
+            // m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 100);
             // m_RectTransform.sizeDelta = new Vector2(200, 300);
+            m_RectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 50, 500);
         }
         else if(Input.GetButton("s"))
         {
@@ -34,8 +35,9 @@ public class LearnRectTransform : MonoBehaviour
             // m_RectTransform.anchorMax = m_RectTransform.anchorMax + new Vector2(0, -0.01f);
             // m_RectTransform.localPosition = new Vector3(0, -100, 0);
             // m_RectTransform.anchoredPosition = new Vector2(0, -100);
-            m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 300);
+            // m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 300);
             // m_RectTransform.sizeDelta = new Vector2(200, 100);
+            m_RectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 50, 500);
         }
         else if (Input.GetButton("a"))
         {
@@ -43,8 +45,9 @@ public class LearnRectTransform : MonoBehaviour
             // m_RectTransform.anchorMax = m_RectTransform.anchorMax + new Vector2(-0.01f, 0);
             // m_RectTransform.localPosition = new Vector3(-100, 0, 0);
             // m_RectTransform.anchoredPosition = new Vector2(-100, 0);
-            m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
+            // m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
             // m_RectTransform.sizeDelta = new Vector2(100, 200);
+            m_RectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 50, 500);
         }
         else if (Input.GetButton("d"))
         {
@@ -52,8 +55,9 @@ public class LearnRectTransform : MonoBehaviour
             // m_RectTransform.anchorMax = m_RectTransform.anchorMax + new Vector2(0.01f, 0);
             // m_RectTransform.localPosition = new Vector3(100, 0, 0);
             // m_RectTransform.anchoredPosition = new Vector2(100, 0);
-            m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 300);
+            // m_RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 300);
             // m_RectTransform.sizeDelta = new Vector2(300, 200);
+            m_RectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, 50, 500);
         }
     }
 
