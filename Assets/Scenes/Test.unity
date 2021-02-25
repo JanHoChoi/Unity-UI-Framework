@@ -569,11 +569,11 @@ RectTransform:
   m_Father: {fileID: 176219584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.397, y: 0.22933334}
-  m_AnchorMax: {x: 0.70000005, y: 0.7055186}
-  m_AnchoredPosition: {x: -491, y: -185.5}
-  m_SizeDelta: {x: 377, y: 26}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -479.50003, y: 269.9999}
+  m_SizeDelta: {x: 959, y: 540}
+  m_Pivot: {x: 0, y: 0.99999994}
 --- !u!114 &1773193983
 MonoBehaviour:
   m_ObjectHideFlags: 0
