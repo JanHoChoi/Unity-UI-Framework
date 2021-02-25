@@ -43,6 +43,9 @@ public class Test : MonoBehaviour
         GUI.Label(new Rect(0, 100, 500, 50), "AnchorMax : " + m_RectTransform.anchorMax.ToString(), style);
         GUI.Label(new Rect(0, 150, 500, 50), "AnchorMin : " + m_RectTransform.anchorMin.ToString(), style);
         GUI.Label(new Rect(0, 200, 500, 50), "Left : " + m_RectTransform.offsetMin.x.ToString() + " Bottom : " + m_RectTransform.offsetMin.y.ToString(), style);
-        GUI.Label(new Rect(0, 250, 500, 50), "Right : " + (-m_RectTransform.offsetMax.x).ToString() + " Top : " + (-m_RectTransform.offsetMax.y).ToString(), style);
+        GUI.Label(new Rect(0, 250, 500, 50), "Right : " + m_RectTransform.offsetMax.x.ToString() + " Top : " + m_RectTransform.offsetMax.y.ToString(), style);
+        GUI.Label(new Rect(0, 300, 500, 50), "Pivot :" + m_RectTransform.pivot.ToString(), style);
+        GUI.Label(new Rect(0, 350, 500, 50), "Rect : " + m_RectTransform.rect, style);
+        GUI.Label(new Rect(0, 400, 500, 50), "SizeDelta : " + m_RectTransform.sizeDelta, style);
     }
 }
